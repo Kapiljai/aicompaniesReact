@@ -1,0 +1,42 @@
+  {
+            this.state.isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <span className="close-btn" onClick={this.toggleModal}>
+                            &times;
+                        </span>
+                        <h4 className="language-content-currency">Language & Currency</h4>
+                        <div className="modal-header-language mt-3">
+                            <span
+                                className={`tablink ${activeTab === 'LanguageTab' ? 'active' : ''}`}
+                                onClick={() => this.setActiveTab('LanguageTab')}
+                            >
+                                Language
+                            </span>
+                            <span
+                                className={`tablink ${activeTab === 'CurrencyTab' ? 'active' : ''}`}
+                                onClick={() => this.setActiveTab('CurrencyTab')}
+                            >
+                                Currency
+                            </span>
+                        </div>
+                        <div className="modal-body mt-4">
+                            {activeTab === 'LanguageTab' && (
+                                <ul className="language-list">
+                                    <li>Hindi</li>
+                                    <li>English (US)</li>
+                                    <li>English (UK)</li>
+                                </ul>
+                            )}
+                            {activeTab === 'CurrencyTab' && (
+                                <ul className="currency-list">
+                                    <li>USD - United States Dollar</li>
+                                    <li>INR - Indian Rupee</li>
+                                    <li>GBP - British Pound</li>
+                                </ul>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
